@@ -1,7 +1,7 @@
 "use client"
 
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "./ui/card.jsx"
+import { Button } from "./ui/button.jsx"
 import { ChevronLeft, ChevronRight, Star } from "lucide-react"
 import { useState } from "react"
 
@@ -60,40 +60,33 @@ export default function Testimonials() {
 
         <div className="relative mx-auto max-w-4xl">
           <Card className="border-0 bg-card shadow-xl">
-            <CardContent className="p-8 sm:p-12">
-              <div className="text-center">
-                {/* Stars */}
-                <div className="mb-6 flex justify-center space-x-1">
-                  {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-accent text-accent" />
-                  ))}
-                </div>
+            <CardContent className="p-8 sm:p-12 text-center">
+              <div className="mb-6 flex justify-center space-x-1">
+                {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-accent text-accent" />
+                ))}
+              </div>
 
-                {/* Quote */}
-                <blockquote className="text-lg sm:text-xl text-card-foreground mb-8 text-pretty">
-                  "{testimonials[currentIndex].content}"
-                </blockquote>
+              <blockquote className="text-lg sm:text-xl text-card-foreground mb-8 text-pretty">
+                "{testimonials[currentIndex].content}"
+              </blockquote>
 
-                {/* Author */}
-                <div className="flex items-center justify-center space-x-4">
-                  <div className="text-3xl">{testimonials[currentIndex].avatar}</div>
-                  <div className="text-left">
-                    <div className="font-semibold text-card-foreground">{testimonials[currentIndex].name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonials[currentIndex].role}</div>
-                    <div className="text-sm text-muted-foreground">{testimonials[currentIndex].location}</div>
-                  </div>
+              <div className="flex items-center justify-center space-x-4">
+                <div className="text-3xl">{testimonials[currentIndex].avatar}</div>
+                <div className="text-left">
+                  <div className="font-semibold text-card-foreground">{testimonials[currentIndex].name}</div>
+                  <div className="text-sm text-muted-foreground">{testimonials[currentIndex].role}</div>
+                  <div className="text-sm text-muted-foreground">{testimonials[currentIndex].location}</div>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Navigation */}
           <div className="flex justify-center items-center mt-8 space-x-4">
             <Button variant="outline" size="icon" onClick={prevTestimonial} className="rounded-full bg-transparent">
               <ChevronLeft className="h-4 w-4" />
             </Button>
 
-            {/* Dots indicator */}
             <div className="flex space-x-2">
               {testimonials.map((_, index) => (
                 <button

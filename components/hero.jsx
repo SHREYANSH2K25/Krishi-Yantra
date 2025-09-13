@@ -1,4 +1,6 @@
-import { Button } from "@/components/ui/button"
+"use client"
+
+import { Button } from "./ui/button.jsx"
 import { ArrowRight, Play } from "lucide-react"
 
 export default function Hero() {

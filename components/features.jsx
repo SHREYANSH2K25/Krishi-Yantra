@@ -1,5 +1,7 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Sprout, Shield, TrendingUp } from "lucide-react"
+"use client"
+
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "./ui/card.jsx"
+import { Sprout, Shield, TrendingUp, CloudRain, Droplets, BarChart3 } from "lucide-react"
 
 const features = [
   {
@@ -22,6 +24,26 @@ const features = [
     description: "Real-time market analysis and price forecasting to help you make informed selling decisions.",
     benefits: ["Price trend analysis", "Optimal selling timing", "Maximize profit margins"],
   },
+  {
+    icon: CloudRain,
+    title: "Weather Insights",
+    description:
+      "Hyperlocal weather forecasting and climate risk assessment to protect your crops from extreme conditions.",
+    benefits: ["7-day precision forecasts", "Storm alerts & warnings", "Climate adaptation strategies"],
+  },
+  {
+    icon: Droplets,
+    title: "Irrigation Management",
+    description:
+      "Smart water management system that optimizes irrigation schedules based on soil moisture and weather data.",
+    benefits: ["Water usage optimization", "Automated scheduling", "Drought risk mitigation"],
+  },
+  {
+    icon: BarChart3,
+    title: "Yield Analytics",
+    description: "Comprehensive yield prediction and performance tracking to maximize your harvest potential.",
+    benefits: ["Harvest forecasting", "Performance benchmarking", "ROI optimization"],
+  },
 ]
 
 export default function Features() {
@@ -33,8 +55,7 @@ export default function Features() {
             Everything you need for modern farming
           </h2>
           <p className="mt-4 text-lg text-muted-foreground text-pretty">
-            Our comprehensive platform combines cutting-edge AI with agricultural expertise to deliver actionable
-            insights.
+            Our comprehensive platform combines cutting-edge AI with agricultural expertise to deliver actionable insights.
           </p>
         </div>
 
@@ -62,7 +83,6 @@ export default function Features() {
                 </ul>
               </CardContent>
 
-              {/* Decorative element */}
               <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-primary/5"></div>
             </Card>
           ))}
